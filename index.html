@@ -2,174 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Monalisa Mitra | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: white;
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: linear-gradient(120deg, #1a1a2e, #16213e);
+      animation: gradientBG 15s ease infinite;
     }
-    header {
-      padding: 2rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.2);
-      animation: fadeIn 2s ease-in-out;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     nav {
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(5px);
+      padding: 1rem;
+      z-index: 999;
     }
     nav a {
       color: white;
+      margin: 0 1rem;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
+      transition: 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #00f2fe;
     }
     section {
-      padding: 4rem 2rem;
-      max-width: 960px;
+      padding: 100px 20px;
+      max-width: 1000px;
       margin: auto;
-      animation: fadeInUp 1s ease-in-out;
     }
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
+    h1, h2 {
+      margin-bottom: 1rem;
+      color: #00f2fe;
     }
-    .skills-grid, .projects-grid {
+    .skills, .projects, .experience {
       display: grid;
       gap: 1rem;
     }
-    .skills-grid {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .btn {
+      padding: 10px 20px;
+      background: #00f2fe;
+      color: black;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
     }
-    .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease-in-out;
-    }
-    .card:hover {
-      transform: translateY(-5px);
+    .btn:hover {
+      background: white;
     }
     footer {
       text-align: center;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.2);
-      font-size: 0.9rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 14px;
+      background-color: rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Monalisa Mitra</h1>
-    <p>Software Engineer | Data Analyst | Power BI Developer | Python Developer</p>
-    <a href="./MONALISAMITRA_Resume_pdf_v2.pdf" download style="color: #fff; border: 1px solid white; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none;">Download Resume</a>
-  </header>
 
   <nav>
+    <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="hero" data-aos="fade-up">
+    <h1>Monalisa Mitra</h1>
+    <p>Software Engineer | Data Analyst | Power BI Developer</p>
+    <p>Building smart apps and data-driven solutions using AI, cloud, and code.</p>
+    <a href="MONALISAMITRA_Resume_pdf_v2.pdf" class="btn" download>Download CV</a>
+  </section>
+
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>I’m a Kolkata-based software engineer with a passion for data-driven applications, AI-powered tools, and interactive dashboards. With hands-on experience in Power BI, Python (Flask), SharePoint, and AI APIs like ChatGPT and ElevenLabs, I love automating workflows and crafting smart digital solutions.</p>
+    <p>I’m a results-driven software engineer with a strong background in data analysis, automation, and full-stack development. I thrive in solving complex problems and turning data into impactful decisions. Apart from coding, I love dancing, solo trips, and meaningful conversations.</p>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="card">Python</div>
-      <div class="card">Flask</div>
-      <div class="card">SQL</div>
-      <div class="card">Power BI</div>
-      <div class="card">DAX</div>
-      <div class="card">JavaScript</div>
-      <div class="card">MongoDB</div>
-      <div class="card">PowerApps</div>
-      <div class="card">Azure Blob</div>
-      <div class="card">AWS S3</div>
-      <div class="card">Postman</div>
-      <div class="card">ChatGPT</div>
+    <div class="skills">
+      <p><strong>Languages:</strong> Python, JavaScript, SQL</p>
+      <p><strong>Frameworks:</strong> Flask, Power BI, PowerApps</p>
+      <p><strong>Tools:</strong> Azure, AWS, Postman, SharePoint, GitHub</p>
+      <p><strong>AI Tools:</strong> ChatGPT, Gemini, AWS Polly, ElevenLabs</p>
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="card">
-        <h3>Podcast Generator</h3>
-        <p>AI tool using ChatGPT & TTS APIs to auto-generate podcasts. Reduced manual work by 70%.</p>
-      </div>
-      <div class="card">
-        <h3>Assistant Bot</h3>
-        <p>Python NLP bot that automated test workflows and saved 40% execution time.</p>
-      </div>
-      <div class="card">
-        <h3>Power BI Dashboards</h3>
-        <p>Created 20+ dashboards with DAX & Power Query. Handled 1M+ records with 99.9% accuracy.</p>
-      </div>
-      <div class="card">
-        <h3>Employee Chatbot</h3>
-        <p>MS Teams bot for onboarding automation. Cut HR response time by 60%.</p>
-      </div>
+    <div class="projects">
+      <p><strong>🎙️ Podcast Generator:</strong> Used LLMs, TTS APIs to automate podcast creation. Cut manual time by 70%.</p>
+      <p><strong>📊 Power BI Dashboards:</strong> Built 20+ dashboards for executive insights. Managed over 1M records.</p>
+      <p><strong>🤖 Assistant Bot:</strong> NLP-based Python bot for automating testing. Saved 40% test time.</p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:monalisamitraofficial@gmail.com" style="color: #ffd;">monalisamitraofficial@gmail.com</a></p>
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="experience">
+      <p><strong>Pursuit Software, Kolkata (Dec 2021 – Present)</strong></p>
+      <ul>
+        <li>Developed scalable apps using Flask, Power BI, SharePoint, PowerApps</li>
+        <li>Built LMS, Chatbots, Power BI integrations improving efficiency up to 80%</li>
+        <li>Handled Azure, AWS, automation tools for production-ready projects</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications" data-aos="fade-up">
+    <h2>Certifications & Education</h2>
+    <p><strong>Salesforce Associate Certification</strong></p>
+    <p>MCA - Netaji Subhas Engineering College (2021) – 78.8%</p>
+    <p>BCA - Techno India (2019) – 62.7%</p>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:monalisamitraofficial@gmail.com" style="color:#00f2fe;">monalisamitraofficial@gmail.com</a></p>
     <p>Phone: 7003410580</p>
-    <p>
-      <a href="https://github.com/yourusername" style="color: white;"><i class="fab fa-github"></i> GitHub</a>
-      |
-      <a href="https://linkedin.com/in/yourprofile" style="color: white;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    </p>
+    <p><a href="https://github.com/monalisamitra" target="_blank" class="btn">GitHub</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Monalisa Mitra. All rights reserved.
+    © 2025 Monalisa Mitra. All rights reserved.
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+
 </body>
 </html>
