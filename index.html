@@ -11,6 +11,7 @@
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       background: linear-gradient(120deg, #1a1a2e, #16213e);
+      background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
     }
     @keyframes gradientBG {
@@ -46,9 +47,24 @@
       margin-bottom: 1rem;
       color: #00f2fe;
     }
-    .skills, .projects, .experience {
+    .skills, .experience {
       display: grid;
       gap: 1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
     }
     .btn {
       padding: 10px 20px;
@@ -107,9 +123,42 @@
   <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="projects">
-      <p><strong>🎙️ Podcast Generator:</strong> Used LLMs, TTS APIs to automate podcast creation. Cut manual time by 70%.</p>
-      <p><strong>📊 Power BI Dashboards:</strong> Built 20+ dashboards for executive insights. Managed over 1M records.</p>
-      <p><strong>🤖 Assistant Bot:</strong> NLP-based Python bot for automating testing. Saved 40% test time.</p>
+      <div class="project-card">
+        <h3>🎙️ Podcast Generator</h3>
+        <p>Used LLMs, TTS APIs to automate podcast creation. Cut manual time by 70%.</p>
+      </div>
+      <div class="project-card">
+        <h3>📊 Power BI Dashboards</h3>
+        <p>Built 20+ dashboards for executive insights. Managed over 1M records.</p>
+      </div>
+      <div class="project-card">
+        <h3>🤖 Assistant Bot</h3>
+        <p>NLP-based Python bot for automating testing. Saved 40% test time.</p>
+      </div>
+      <div class="project-card">
+        <h3>💼 Onboarding Chatbot</h3>
+        <p>Rule-driven chatbot for MS Teams to automate new hire onboarding. Reduced HR response time by 60%.</p>
+      </div>
+      <div class="project-card">
+        <h3>🗂️ SharePoint Document Manager</h3>
+        <p>Implemented secure SharePoint system with role-based access. Reduced unauthorized access incidents by 95%.</p>
+      </div>
+      <div class="project-card">
+        <h3>🧪 QTest-like Test Case Manager</h3>
+        <p>Optimized backend and database for QA system. Improved performance and reliability.</p>
+      </div>
+      <div class="project-card">
+        <h3>📚 PowerApps LMS</h3>
+        <p>Developed a full Learning Management System using PowerApps and SharePoint. Increased training completion rate by 80%.</p>
+      </div>
+      <div class="project-card">
+        <h3>📉 SonarQube + Power BI Integration</h3>
+        <p>Real-time dashboards for code quality metrics. Helped reduce tech debt by 25%.</p>
+      </div>
+      <div class="project-card">
+        <h3>📡 Live Power BI from PowerApps</h3>
+        <p>Enabled live data syncing and visualization using PowerApps + Power BI for better decision-making.</p>
+      </div>
     </div>
   </section>
 
@@ -142,11 +191,3 @@
   <footer>
     © 2025 Monalisa Mitra. All rights reserved.
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-  </script>
-
-</body>
-</html>
